@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Катя Климочкина — клинический психолог · КПТ · ДБТ</title>
+  <meta name="description" content="Катя Климочкина — клинический психолог, КПТ и ДБТ-терапевт. Работа со сложностями регуляции эмоций, ПРЛ, ПТСР и кПТСР, БАР, тревожными расстройствами, ОКР, аутизмом и СДВГ.">
+  <meta name="theme-color" content="#F4F1E8">
+
+  <style>
+    :root{
+      --bg:#F4F1E8;
+      --bg2:#FAF9F4;
+      --paper:#FFFFFF;
+      --text:#252724;
+      --muted:#6E716A;
+      --line:#D8D5C9;
+      --sage:#A7B49C;
+      --sage-dark:#66745F;
+      --sage-light:#DCE3D7;
+      --yellow:#E8DFAE;
+      --pink:#E5C8C0;
+      --max:1180px;
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height:1.55;
+      font-size:17px;
+    }
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .serif{font-family:Georgia,"Times New Roman",serif}
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:12px;
+      color:var(--sage-dark);
+      font-weight:700;
+    }
+
+    /* NAV */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(244,241,232,.9);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(216,213,201,.75);
+    }
+    .nav-inner{
+      min-height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .logo{
+      text-decoration:none;
+      font-family:Georgia,serif;
+      font-size:21px;
+      white-space:nowrap;
+    }
+    .nav-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+    .nav-links a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .nav-links a:hover{color:var(--text)}
+
+    /* HERO */
+    .hero{
+      min-height:calc(100vh - 68px);
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:70px;
+      align-items:center;
+      padding:80px 0 90px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero h1{
+      font-family:Georgia,serif;
+      font-weight:400;
+      font-size:clamp(54px,8vw,104px);
+      line-height:.93;
+      letter-spacing:-.045em;
+      margin:16px 0 30px;
+    }
+    .hero-lead{
+      max-width:680px;
+      font-size:21px;
+      line-height:1.45;
+      color:#42453F;
+      margin:0 0 34px;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:0 21px;
+      border-radius:999px;
+      text-decoration:none;
+      border:1px solid var(--text);
+      font-size:15px;
+      transition:.2s ease;
+    }
+    .button.primary{background:var(--text);color:white}
+    .button.secondary{background:transparent}
+    .button:hover{transform:translateY(-2px)}
+    .hero-note{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:34px;
+      transform:rotate(1.2deg);
+      position:relative;
+      box-shadow:0 14px 40px rgba(55,55,45,.06);
+    }
+    .hero-note:before{
+      content:"";
+      position:absolute;
+      width:58px;height:16px;
+      background:rgba(232,223,174,.75);
+      top:-9px;left:35%;
+      transform:rotate(-4deg);
+    }
+    .hero-note p{margin:0 0 18px}
+    .hero-note p:last-child{margin:0}
+    .scribble{
+      position:absolute;
+      pointer-events:none;
+      opacity:.55;
+    }
+    .scribble.one{right:-20px;top:70px;width:180px}
+    .scribble.two{left:-10px;bottom:20px;width:150px}
+
+    /* SECTIONS */
+    section{padding:105px 0}
+    .section-head{
+      display:grid;
+      grid-template-columns:.6fr 1.4fr;
+      gap:60px;
+      margin-bottom:45px;
+      align-items:start;
+    }
+    h2{
+      font-family:Georgia,serif;
+      font-weight:400;
+      font-size:clamp(38px,5vw,64px);
+      line-height:1;
+      letter-spacing:-.035em;
+      margin:0;
+    }
+    .section-intro{
+      max-width:690px;
+      font-size:20px;
+      color:var(--muted);
+      margin:0;
+    }
+
+    /* WORK */
+    .work-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px;
+      min-height:225px;
+    }
+    .card:nth-child(2){transform:translateY(16px)}
+    .card:nth-child(4){transform:translateY(12px)}
+    .card:nth-child(6){transform:translateY(20px)}
+    .num{
+      font-family:Georgia,serif;
+      color:var(--sage-dark);
+      font-size:19px;
+    }
+    .card h3{
+      font-family:Georgia,serif;
+      font-size:28px;
+      font-weight:400;
+      margin:30px 0 12px;
+      line-height:1.05;
+    }
+    .card p{margin:0;color:var(--muted);font-size:15px}
+
+    /* HOW */
+    .how{background:var(--bg2)}
+    .how-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .how-item{padding:28px 25px 32px;border-right:1px solid var(--line)}
+    .how-item:last-child{border-right:0}
+    .how-item strong{
+      display:block;
+      font-family:Georgia,serif;
+      font-size:24px;
+      font-weight:400;
+      margin:10px 0;
+    }
+    .how-item p{margin:0;color:var(--muted);font-size:15px}
+
+    /* ABOUT */
+    .about-grid{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:70px;
+      align-items:start;
+    }
+    .portrait-note{
+      background:var(--sage-light);
+      border-radius:50% 48% 53% 45%;
+      min-height:390px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:60px;
+      transform:rotate(-2deg);
+    }
+    .portrait-note span{
+      font-family:Georgia,serif;
+      font-size:31px;
+      line-height:1.05;
+    }
+    .about-copy p{font-size:19px;max-width:700px}
+    .about-copy p:first-child{margin-top:0}
+    .small-note{color:var(--muted);font-size:15px!important}
+
+    /* EDUCATION */
+    .education{background:var(--bg2)}
+    .edu-list{border-top:1px solid var(--line)}
+    .edu{
+      display:grid;
+      grid-template-columns:190px 1fr;
+      gap:30px;
+      padding:25px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .edu-year{color:var(--sage-dark);font-size:14px;font-weight:700}
+    .edu h3{margin:0 0 7px;font-family:Georgia,serif;font-size:24px;font-weight:400}
+    .edu p{margin:0;color:var(--muted);font-size:15px}
+
+    /* FORMATS */
+    .formats-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .format{
+      padding:34px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:var(--paper);
+    }
+    .format:nth-child(2){background:var(--yellow)}
+    .format:nth-child(3){background:var(--pink)}
+    .format h3{font-family:Georgia,serif;font-size:31px;font-weight:400;margin:0 0 14px}
+    .format p{margin:0;color:#50534C}
+
+    /* COLLEAGUES */
+    .colleagues{
+      background:var(--sage-light);
+    }
+    .supervision{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+    .supervision h2{font-size:clamp(42px,5vw,68px)}
+    .supervision-copy p{font-size:19px}
+    .link-arrow{
+      display:inline-flex;
+      gap:8px;
+      text-decoration:none;
+      border-bottom:1px solid currentColor;
+      padding-bottom:3px;
+    }
+
+    /* MATERIALS */
+    .materials-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+    .material{
+      min-height:220px;
+      padding:30px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .material h3{font-family:Georgia,serif;font-weight:400;font-size:30px;margin:0 0 10px}
+    .material p{margin:0;color:var(--muted);max-width:470px}
+    .material a{
+      align-self:flex-start;
+      margin-top:25px;
+      text-decoration:none;
+      border-bottom:1px solid var(--text);
+    }
+    .placeholder{
+      border-style:dashed;
+      background:transparent;
+    }
+
+    /* CONTACTS */
+    .contacts{
+      background:var(--text);
+      color:#F8F6EF;
+    }
+    .contacts .eyebrow{color:var(--sage)}
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.3fr .7fr;
+      gap:70px;
+      align-items:end;
+    }
+    .contacts h2{font-size:clamp(48px,7vw,88px)}
+    .contacts p{color:#C9CBC4;font-size:18px;max-width:600px}
+    .contact-links{display:flex;flex-direction:column;gap:12px}
+    .contact-links a{
+      color:#F8F6EF;
+      text-decoration:none;
+      font-size:20px;
+      width:max-content;
+      max-width:100%;
+      border-bottom:1px solid #747970;
+    }
+    footer{
+      padding:28px 0;
+      color:#A9ADA5;
+      font-size:13px;
+      border-top:1px solid #454842;
+    }
+
+    @media (max-width: 900px){
+      .nav-links{display:none}
+      .hero{grid-template-columns:1fr;gap:45px;padding-top:60px}
+      .hero-note{max-width:600px}
+      .section-head{grid-template-columns:1fr;gap:20px}
+      .work-grid{grid-template-columns:repeat(2,1fr)}
+      .how-grid{grid-template-columns:repeat(2,1fr)}
+      .how-item:nth-child(2){border-right:0}
+      .how-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .about-grid,.supervision{grid-template-columns:1fr}
+      .portrait-note{min-height:280px}
+      .formats-grid{grid-template-columns:1fr}
+      .materials-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr;gap:35px}
+    }
+
+    @media (max-width: 600px){
+      body{font-size:16px}
+      .wrap{width:min(calc(100% - 28px),var(--max))}
+      section{padding:72px 0}
+      .hero{min-height:auto;padding:55px 0 70px}
+      .hero h1{font-size:58px}
+      .hero-lead{font-size:18px}
+      .hero-note{padding:25px}
+      .work-grid{grid-template-columns:1fr}
+      .card:nth-child(n){transform:none}
+      .how-grid{grid-template-columns:1fr}
+      .how-item{border-right:0;border-bottom:1px solid var(--line)}
+      .how-item:last-child{border-bottom:0}
+      .edu{grid-template-columns:1fr;gap:8px}
+      .portrait-note{min-height:230px;padding:40px}
+      .portrait-note span{font-size:25px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">Катя Климочкина</a>
+    <nav class="nav-links" aria-label="Основная навигация">
+      <a href="#work">с чем работаю</a>
+      <a href="#about">обо мне</a>
+      <a href="#education">образование</a>
+      <a href="#materials">материалы</a>
+      <a href="#contacts">контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <svg class="scribble one" viewBox="0 0 180 100" fill="none" aria-hidden="true">
+      <path d="M8 65C32 15 68 22 83 55C96 84 122 91 170 29" stroke="#66745F" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M18 78C53 55 79 66 107 80C131 91 149 82 165 68" stroke="#66745F" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+
+    <div>
+      <div class="eyebrow">клинический психолог · КПТ · ДБТ</div>
+      <h1>Катя<br>Климочкина</h1>
+      <p class="hero-lead">
+        Работаю со сложностями регуляции эмоций, последствиями травмы,
+        тревогой и другими состояниями, где обычно хочется не просто
+        «поговорить», а разобраться, что происходит и что с этим делать.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#contacts">Записаться</a>
+        <a class="button secondary" href="#work">С чем работаю →</a>
+      </div>
+    </div>
+
+    <aside class="hero-note">
+      <div class="eyebrow">как я работаю</div>
+      <p><strong>Структурно.</strong> У терапии есть направление, а не бесконечное обсуждение всего, что пришло в голову.</p>
+      <p><strong>Доказательно.</strong> Использую методы с исследовательской базой и объясняю, зачем мы делаем то или иное.</p>
+      <p><strong>Практически.</strong> Важная часть работы происходит не только на встрече, но и между встречами.</p>
+    </aside>
+
+    <svg class="scribble two" viewBox="0 0 150 100" fill="none" aria-hidden="true">
+      <path d="M15 22C37 46 54 38 71 62C89 87 111 73 137 87" stroke="#66745F" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="24" cy="19" r="5" stroke="#66745F" stroke-width="1.5"/>
+    </svg>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">с чем работаю</div>
+          <h2>Не обязательно<br>приходить<br>«с диагнозом».</h2>
+        </div>
+        <p class="section-intro">
+          Можно приходить с конкретной проблемой, с которой давно не получается справиться,
+          или с ощущением «я понимаю головой, что происходит, но ничего не меняется».
+          На старте мы разбираемся, что именно происходит и какая работа здесь будет полезна.
+        </p>
+      </div>
+
+      <div class="work-grid">
+        <article class="card">
+          <div class="num">01</div>
+          <h3>Сложности<br>с эмоциями</h3>
+          <p>Интенсивные и долго не затихающие эмоциональные реакции, импульсивность, трудности с управлением поведением в сильных эмоциях.</p>
+        </article>
+
+        <article class="card">
+          <div class="num">02</div>
+          <h3>ПРЛ</h3>
+          <p>Самоповреждающее и суицидальное поведение, нестабильные отношения, трудности с идентичностью, выраженная эмоциональная реактивность.</p>
+        </article>
+
+        <article class="card">
+          <div class="num">03</div>
+          <h3>ПТСР<br>и кПТСР</h3>
+          <p>Последствия единичного и множественного опыта травмы, в том числе физического, сексуализированного и эмоционального насилия.</p>
+        </article>
+
+        <article class="card">
+          <div class="num">04</div>
+          <h3>БАР</h3>
+          <p>Работа с психологическими аспектами биполярного расстройства и эмоциональными колебаниями в рамках комплексного подхода.</p>
+        </article>
+
+        <article class="card">
+          <div class="num">05</div>
+          <h3>Тревога<br>и ОКР</h3>
+          <p>Генерализованное тревожное расстройство, паническое расстройство, социальная тревожность, обсессивно-компульсивное расстройство.</p>
+        </article>
+
+        <article class="card">
+          <div class="num">06</div>
+          <h3>Нейроотличия</h3>
+          <p>Расстройства аутистического спектра и СДВГ — в том числе когда они сочетаются с тревогой, травмой или сложностями эмоциональной регуляции.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">как проходит работа</div>
+          <h2>Без магии.<br>Но и без<br>сухой инструкции.</h2>
+        </div>
+        <p class="section-intro">
+          Мне важно, чтобы клиент понимал логику терапии: что мы сейчас делаем,
+          зачем это нужно и по каким признакам будем понимать, что работа движется.
+        </p>
+      </div>
+
+      <div class="how-grid">
+        <div class="how-item">
+          <div class="num">01</div>
+          <strong>Структура</strong>
+          <p>Формулируем цели, повестку встреч и отслеживаем изменения по ходу терапии.</p>
+        </div>
+        <div class="how-item">
+          <div class="num">02</div>
+          <strong>Доказательность</strong>
+          <p>Опираемся на современные модели и методы КПТ, ДБТ и других подходов с исследовательской базой.</p>
+        </div>
+        <div class="how-item">
+          <div class="num">03</div>
+          <strong>Практика</strong>
+          <p>Разбираемся не только в том, почему что-то происходит, но и тренируем новые способы реагирования.</p>
+        </div>
+        <div class="how-item">
+          <div class="num">04</div>
+          <strong>Под задачу</strong>
+          <p>Метод выбирается под проблему и конкретного человека, а не наоборот.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="portrait-note">
+          <span>«Мне интересно<br>разбираться,<br>как устроена<br>проблема —<br>и что реально<br>помогает её менять».</span>
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow">обо мне</div>
+          <h2>Клинический психолог,<br>КПТ и ДБТ-терапевт.</h2>
+          <p>
+            Я работаю со взрослыми. В центре моей практики — эмоциональная регуляция,
+            ПРЛ, ПТСР и кПТСР, тревожные расстройства, БАР, ОКР, нейроотличия
+            и сложные сочетания нескольких проблем.
+          </p>
+          <p>
+            Мне близок клинический подход: не пытаться подогнать человека под один
+            протокол, но и не превращать терапию в бесконечный разговор обо всём.
+            Мы формулируем проблему, проверяем гипотезы и выбираем инструменты,
+            которые имеют смысл именно здесь.
+          </p>
+          <p class="small-note">
+            Помимо индивидуальной работы, я веду группы навыков ДБТ, участвую
+            в профессиональных проектах и занимаюсь обучением и супервизией психологов.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="education">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">образование</div>
+          <h2>Учусь<br>довольно<br>много.</h2>
+        </div>
+        <p class="section-intro">
+          Ниже — основные программы и направления обучения. Список не включает каждую
+          короткую лекцию и семинар, но показывает траекторию подготовки.
+        </p>
+      </div>
+
+      <div class="edu-list">
+        <article class="edu">
+          <div class="edu-year">2015</div>
+          <div>
+            <h3>МГУ им. М. В. Ломоносова</h3>
+            <p>Факультет психологии, кафедра социальной психологии.</p>
+          </div>
+        </article>
+
+        <article class="edu">
+          <div class="edu-year">2018–2021</div>
+          <div>
+            <h3>Аспирантура МГУ</h3>
+            <p>Кафедра социальной психологии. Научная работа.</p>
+          </div>
+        </article>
+
+        <article class="edu">
+          <div class="edu-year">2017–2019</div>
+          <div>
+            <h3>Когнитивно-поведенческая терапия</h3>
+            <p>Долгосрочная программа обучения в Центре когнитивной терапии; дополнительные программы по депрессии, ГТР, паническому расстройству и агорафобии, социальной тревожности, ОКР, зависимостям и РПП.</p>
+          </div>
+        </article>
+
+        <article class="edu">
+          <div class="edu-year">2019–2020</div>
+          <div>
+            <h3>Клиническая психология</h3>
+            <p>Повышение квалификации в РНИМУ им. Н. И. Пирогова.</p>
+          </div>
+        </article>
+
+        <article class="edu">
+          <div class="edu-year">2019–2022</div>
+          <div>
+            <h3>Трансдиагностический подход, схема-терапия, ДБТ</h3>
+            <p>Унифицированный протокол; сертификационная программа по схема-терапии; обучение диалектико-поведенческой терапии в составе команды «Цветочки».</p>
+          </div>
+        </article>
+
+        <article class="edu">
+          <div class="edu-year">2021–2024</div>
+          <div>
+            <h3>Терапия травмы и другие подходы</h3>
+            <p>КПТ ПТСР и кПТСР, пролонгированная экспозиция, CFT, ACT; IPSRT для работы с БАР.</p>
+          </div>
+        </article>
+
+        <article class="edu">
+          <div class="edu-year">2023–2025</div>
+          <div>
+            <h3>Аутизм, СДВГ и специализированные программы</h3>
+            <p>University of Derby, King's College London; интенсивное обучение протоколу ДБТ-пролонгированной экспозиции для ПТСР.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">форматы</div>
+          <h2>Можно<br>по-разному.</h2>
+        </div>
+        <p class="section-intro">
+          Формат зависит от задачи. Индивидуальная терапия — один из вариантов;
+          отдельно я работаю с группами и коллегами-психологами.
+        </p>
+      </div>
+
+      <div class="formats-grid">
+        <article class="format">
+          <h3>Индивидуальная терапия</h3>
+          <p>Работа со взрослыми. Формат и продолжительность терапии определяются задачей и клинической картиной.</p>
+        </article>
+        <article class="format">
+          <h3>Группы ДБТ</h3>
+          <p>Тренинги навыков и специализированные программы, в том числе для людей с ПРЛ, БАР и кПТСР.</p>
+        </article>
+        <article class="format">
+          <h3>Супервизия</h3>
+          <p>Работа с коллегами над случаями, концептуализацией, выбором интервенций и сложными моментами терапевтического процесса.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="colleagues">
+    <div class="wrap">
+      <div class="supervision">
+        <div>
+          <div class="eyebrow">для коллег</div>
+          <h2>Супервизия<br>и обучение.</h2>
+        </div>
+        <div class="supervision-copy">
+          <p>
+            Супервизия — для психологов и психотерапевтов, которым нужно не только
+            «обсудить случай», но и вместе подумать о концептуализации, стратегии
+            терапии, выборе интервенций, терапевтическом процессе и собственных
+            трудностях в работе.
+          </p>
+          <p>
+            Также я создаю практические программы по КПТ: меньше теории ради теории,
+            больше отработки навыков, ролевых игр, разбора случаев и преднамеренной практики.
+          </p>
+
+          <!-- ЗАМЕНИ # НА АКТУАЛЬНУЮ ССЫЛКУ НА ОБУЧЕНИЕ -->
+          <a class="link-arrow" href="#" target="_blank" rel="noopener">
+            Моё обучение для психологов →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="materials">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">материалы</div>
+          <h2>Пишу,<br>говорю,<br>участвую.</h2>
+        </div>
+        <p class="section-intro">
+          Подкасты, статьи, лекции и профессиональные проекты — если хочется сначала
+          посмотреть, как я думаю и о чём говорю, можно начать отсюда.
+        </p>
+      </div>
+
+      <div class="materials-grid">
+        <article class="material">
+          <div>
+            <h3>Книга</h3>
+            <p>«Травма. Что она с нами делает и что мы можем сделать с ней» — книга о травме и её последствиях.</p>
+          </div>
+          <!-- ЗАМЕНИ # НА СТРАНИЦУ КНИГИ -->
+          <a href="#" target="_blank" rel="noopener">посмотреть книгу →</a>
+        </article>
+
+        <article class="material">
+          <div>
+            <h3>Подкасты</h3>
+            <p>Разговоры о сильных эмоциях, травме, психотерапии и других темах, которыми я занимаюсь.</p>
+          </div>
+          <!-- ЗАМЕНИ # НА СТРАНИЦУ С ПОДКАСТАМИ -->
+          <a href="#" target="_blank" rel="noopener">слушать →</a>
+        </article>
+
+        <article class="material">
+          <div>
+            <h3>Статьи и лекции</h3>
+            <p>Материалы о ПРЛ, кПТСР, экспозиции, эмоциональной регуляции и других клинических темах.</p>
+          </div>
+          <!-- ЗАМЕНИ # НА СТРАНИЦУ СО СТАТЬЯМИ -->
+          <a href="#" target="_blank" rel="noopener">читать и смотреть →</a>
+        </article>
+
+        <article class="material">
+          <div>
+            <h3>Все ссылки</h3>
+            <p>Соцсети, каналы, профессиональные проекты и актуальные программы — всё в одном месте.</p>
+          </div>
+          <a href="https://taplink.cc/klimochkina" target="_blank" rel="noopener">открыть Taplink →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="contacts">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="eyebrow">контакты</div>
+          <h2>Если хотите<br>обсудить работу —<br>напишите.</h2>
+          <p>
+            Индивидуальная консультация: 6500 ₽ · 50 минут.
+            Для записи напишите на почту с пометкой «консультация».
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:kattklim@gmail.com?subject=Консультация">kattklim@gmail.com</a>
+          <a href="https://taplink.cc/klimochkina" target="_blank" rel="noopener">все актуальные ссылки →</a>
+          <a href="https://mhcenter.ru/" target="_blank" rel="noopener">Mental Health Center →</a>
+        </div>
+      </div>
+
+      <footer>
+        <div>Катя Климочкина · клинический психолог · КПТ · ДБТ</div>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Небольшой скрипт: плавное закрытие мобильной логики здесь не требуется.
+  // Сайт полностью статический и работает без серверной части.
+</script>
+
+</body>
+</html>
